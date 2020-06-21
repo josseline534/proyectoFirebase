@@ -10,11 +10,17 @@ formIngreso.addEventListener("submit", async (e) => {
 })
 formRegistro.addEventListener("submit", async (e) => {
   e.preventDefault()
-  const usuario = new Usuario (userRegistro.value, passwordRegistro.value)
-  const result = await objAut.createEmailPassword(usuario.getEmail(), usuario.getPassword())
+  const usuario = new Usuario (nameRegistro.value,userRegistro.value, passwordRegistro.value)
+  const result = await objAut.createEmailPassword(usuario.getName(), usuario.getEmail(), usuario.getPassword())
   mostrarInfo(result)     
 })
-
+gmail.addEventListener('click', async (e) =>{
+  let provider = new firebase.auth.GoogleAuthProvider()
+  const result = await objAut.ingresarGmail(provider)
+  console.log(result)
+  mostrarInfo(result)
+  
+})
 const mostrarInfo = result => {
   switch (result){
     case true:

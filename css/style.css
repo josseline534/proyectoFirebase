@@ -80,7 +80,7 @@ body{
     color: var(--c-general);
   }
   
-  .form-registration-group .form-registration-social-button {
+  .form-registration-social-button {
     text-transform: uppercase;
     font-size: 16px;
     display: inline-block;
@@ -131,16 +131,16 @@ body{
   .form-registration-group .form-registration-member-signin a {
     margin-left: 0.25rem;
   }
-  .form-registration-group .form-registration-terms {
+  .form-registration-terms {
     text-align: center;
     font-size: 12px;
   }
   
-  .form-registration-group .form-registration-terms a:first-child {
+  .form-registration-terms a:first-child {
     margin-right: 0.25rem;
   }
   
-  .form-registration-group .form-registration-terms a:last-child {
+  .form-registration-terms a:last-child {
     margin-left: 0.25rem;
   }
   

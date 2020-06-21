@@ -1,9 +1,10 @@
 export default class Autentication{
-    constructor (email, password){
+    constructor (name,email, password){
+        this.name=name,
         this.email=email,
         this.password=password
     }
-    async createEmailPassword (email, password) {
+    async createEmailPassword (name, email, password) {
         try{
             if(!email || !password)
                 return false
@@ -11,8 +12,9 @@ export default class Autentication{
                 const result = await firebase.auth()
                 .createUserWithEmailAndPassword(email, password)
                 await result.user.updateProfile({
-                    displayName : "jose"
+                    displayName : name
                 })
+                console.log(result)
                 return true
             }
         }
@@ -37,6 +39,21 @@ export default class Autentication{
             let errorMessage = error.message;
             console.log(`[ERROR-CODE]${errorCode}\n[ERROR-MESSAGE]${errorMessage}`)
         }
+    }
+    async ingresarGmail (provider){
+        provider.addScope('https://www.googleapis.com/auth/cloud-platform')
+        firebase.auth().languageCode = 'es'
+        try{
+            const result = await firebase.auth().signInWithPopup(provider)
+                let token = result.credential.accessToken;
+                let user = result.user;
+                console.log(user);
+                return true
+            
+        }catch (error){
+            console.log(error);
+        }
+        
     }
     
 }
