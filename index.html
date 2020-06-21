@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Proyecto</title>
+</head>
+<body>
+    <div id= "login" class=" form-registration">
+      <div class="grid-x grid-margin-x">
+        <figure class="cell small-12 form-registration-img">
+          <img class="img" src="https://images.pexels.com/photos/221205/pexels-photo-221205.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" />
+          <figcaption class="form-registration-img-caption">Experience everything Yeti+.</figcaption>
+        </figure>
+      </div>
+      <div class="grid-x grid-margin-x">
+        <div class="cell small-6">
+          <!--ingreso-->
+          <form id ="formIngreso" class="form-registration-group" action="">
+            <p class="form-registration-member-signin">Ingresar</p>
+            <input id ="userIngreso" class="form-registration-input"  type="email" placeholder="Email">
+            <input id ="passwordIngreso" class="form-registration-input"  type="password" placeholder="Password">
+            <input id ="acceder" class="form-registration-submit-button" type="submit" value="Ingresar">
+            <p class="or-divider"><span>ó</span></p>
+            <a class="form-registration-social-button" href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> Ingresar con Gmail</a>
+            <p class="form-registration-terms"><a href="#">Términos &amp; Condiciones</a>|<a href="#">Privacy</a></p>
+          </form>
+        </div>
+        <div class="cell small-6">
+          <!--nuevo usuario-->
+          <form id ="formRegistro" class="form-registration-group" action="">
+            <p class="form-registration-member-signin">Registrarte</p>
+            <input id ="userRegistro" class="form-registration-input"  type="email" placeholder="Email">
+            <input id ="passwordRegistro" class="form-registration-input"  type="password" placeholder="Password">
+            <input id ="registar" class="form-registration-submit-button" type="submit" value="Registrar">
+            <p class="form-registration-terms"><a href="#">Términos &amp; Condiciones</a>|<a href="#">Privacy</a></p>
+          </form>
+        </div>
+      </div>
+        
+    </div>
+    
+    <!--firebase-->
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-firestore.js"></script> 
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!--js-->
+    <script src="js/config/configFirebase.js"></script>
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/auth/authController.js"></script>
+</body>
+</html>
